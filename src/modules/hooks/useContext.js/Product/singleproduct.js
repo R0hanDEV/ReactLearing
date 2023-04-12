@@ -1,8 +1,9 @@
 
 import React from 'react'
+import { CartState } from '../CreateContext'
 
-function Singleproduct({ prod, cart, setCart }) {
-
+function Singleproduct({ prod }) {
+    const { cart, setCart } = CartState()
     return (
         <div className="products">
             <img src={prod.image} alt={prod.name} />

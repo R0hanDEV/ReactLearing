@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Header from './header'
 import Singleproduct from './singleproduct'
+import { CartState } from '../CreateContext';
 
-function Cart({ cart, setCart }) {
+function Cart() {
+    const contextCart = CartState()
     const [total, setTotal] = useState();
 
     useEffect(() => {
-        setTotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0))
-    }, [cart])
+        setTotal(contextCart.cart.reduce((acc, curr) => acc + Number(curr.price), 0))
+    }, [contextCart.cart])
 
-    console.log(cart, "cart")
+    console.log(contextCart.cart, "cart")
     return (
         <div>Cart
             <Header></Header>
@@ -18,9 +20,8 @@ function Cart({ cart, setCart }) {
                 <br />
                 <span style={{ fontSize: 30 }}>Total: {total}</span>
                 <div className="productlist">
-                    {cart.map((prod) => (
-                        <Singleproduct prod={prod} cart={cart} setCart={setCart} />
-                        // console.log(prod)
+                    {contextCart.cart.map((prod) => (
+                        <Singleproduct prod={prod} />
                     ))}
                 </div>
             </div>
