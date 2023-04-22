@@ -11,7 +11,7 @@ function Cart() {
         setTotal(contextCart.cart.reduce((acc, curr) => acc + Number(curr.price), 0))
     }, [contextCart.cart])
 
-    console.log(contextCart.cart, "cart")
+ 
     return (
         <div>Cart
             <Header></Header>
