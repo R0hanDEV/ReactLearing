@@ -10,6 +10,8 @@ import Product from './modules/hooks/useContext.js/Product/product';
 import Cart from './modules/hooks/useContext.js/Product/cart';
 import CreateContext from './modules/hooks/useContext.js/CreateContext';
 import UseReducerExample from './modules/hooks/useReducer/useReducerExample';
+import UseCallBackExample from './modules/hooks/useCallback/useCallBackExample';
+import UseMemoexample from './modules/hooks/useMemo/useMemoexample';
 
 function App() {
 
@@ -22,12 +24,14 @@ function App() {
         </Route>
         <Route path='/logout' Component={Logout}>
         </Route>
-        <Route path='usestate' Component={UseStateExample}></Route>
-        <Route path='interview/usestate' Component={UseStateinterview}></Route>
-        <Route path='useEffect' Component={UseEffectExample}></Route>
-        <Route path='useReducer' Component={UseReducerExample}></Route>
-        <Route path='/product' exact element={<CreateContext><Product /></CreateContext>} />
-        <Route path='/cart' exact element={<CreateContext><Cart /></CreateContext>} />
+        <Route sensitive={false} path='usestate' Component={UseStateExample}></Route>
+        <Route sensitive={false} path='interview/usestate' Component={UseStateinterview}></Route>
+        <Route sensitive={false} path='useeffect' Component={UseEffectExample}></Route>
+        <Route sensitive={false} path='usereducer' Component={UseReducerExample}></Route>
+        <Route sensitive={false} path='usecallback' Component={UseCallBackExample}></Route>
+        <Route sensitive={false} path='usememo' Component={UseMemoexample}></Route>
+        <Route sensitive={false} path='/product' exact element={<CreateContext><Product /></CreateContext>} />
+        <Route sensitive={false} path='/cart' exact element={<CreateContext><Cart /></CreateContext>} />
       </Routes>
     </Router>
   );
