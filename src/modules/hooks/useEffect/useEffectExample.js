@@ -34,7 +34,7 @@ function UseEffectExample() {
             The useEffect hook takes two arguments: a function that contains the side effect code, and an optional array of dependencies that determine when the effect should be run. In this case, we pass an empty array as the second argument to ensure that the effect runs only once, when the component mounts.
 
 
-           
+
         </>
     )
 }
